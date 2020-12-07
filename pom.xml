@@ -1,12 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>AutomicU</groupId>
+  
+  <groupId>com.broadcom</groupId>
   <artifactId>AutomicU</artifactId>
   <packaging>war</packaging>
+  <version>${revision}</version>
+  
   <name>AutomicU</name>
   <description>example app for Automic RA</description>
+  
+  <properties>
+        <buildNumber>local</buildNumber>
+        <revision>1.0.0.${buildNumber}</revision>
+        <contextPathName>AutomicU</contextPathName>
+  </properties>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
+    
     <resources>
       <resource>
         <directory>src/AutomicU</directory>
@@ -15,6 +26,7 @@
         </excludes>
       </resource>
     </resources>
+    
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -34,9 +46,8 @@
         </configuration>
       </plugin>
     </plugins>
-    <finalName>${project.groupId}</finalName>
   </build>
-  <version>${build.number}</version>
+
   <dependencies>
   	<dependency>
   		<groupId>org.apache.directory.studio</groupId>
