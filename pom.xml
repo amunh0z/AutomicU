@@ -20,7 +20,7 @@
     
     <resources>
       <resource>
-        <directory>src/AutomicU</directory>
+        <directory>.</directory>
                 <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
